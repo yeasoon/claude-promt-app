@@ -1,0 +1,40 @@
+Create an interactive language learning tutor in an artifact with the following features:
+
+Core Functionality:
+* Implement a UI with a language selector dropdown (include languages like Spanish, French, German, Japanese, Italian, Portuguese, Chinese, Korean, Russian, Arabic)
+* Add a phrase length control selector with options: Random, Single Word, Short Phrase (2-3 words), Medium Phrase (3-5 words), Long Phrase (5-8 words)
+* User guesses the English translation of a given word or phrase in the selected language
+* If user inputs the right answer, show enthusiastic positive feedback with green highlighting and sparkle icon
+* If user inputs the wrong answer, show the correct English translation with an encouraging explanation in yellow highlighting
+* Use Claude API to handle all translation generation and answer checking with full conversation context
+
+Advanced Features:
+* Random phrase generation that picks from 10 different topic categories (everyday conversation, food, travel, greetings, numbers/time, family, emotions, weather, shopping, directions)
+* Automatically generate new phrases when language or difficulty changes
+* Learning history feature that records all attempted phrases with:
+  - The phrase in target language
+  - User's answer
+  - Full feedback/explanation from Claude
+  - Correct/incorrect status with visual indicators (green checkmark or yellow X)
+  - Timestamp
+  - Language being learned
+* Collapsible history panel with scrolling and "Clear All" option
+* Show total count of practiced phrases
+
+UI/UX Requirements:
+* Beautiful gradient design (indigo, purple, pink color scheme)
+* Modern, responsive interface with smooth animations
+* Loading indicators during API calls
+* Press Enter to submit answers
+* Disable inputs during loading
+* Show "New Phrase" button with refresh icon
+* Display history toggle button with count badge
+* Color-coded feedback sections (green for correct, yellow for incorrect)
+
+Technical Requirements:
+* Use React with hooks (useState, useEffect)
+* Integrate Claude Sonnet 4 API for phrase generation and answer checking
+* Use lucide-react icons (BookOpen, Send, RefreshCw, Sparkles, History, CheckCircle, XCircle)
+* Maintain conversation history for contextual responses
+* Handle API errors gracefully
+* Use Tailwind CSS for styling
