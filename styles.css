@@ -1,0 +1,141 @@
+:root {
+  color-scheme: dark;
+  --bg: #0a1020;
+  --panel: #111a33;
+  --card: #172347;
+  --text: #e6ecff;
+  --accent: #65d4ff;
+  --good: #2fd884;
+  --warn: #ffcf5d;
+  --bad: #ff617a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at top, #132552, var(--bg) 55%);
+}
+
+header,
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2fr 1fr;
+}
+
+.panel {
+  background: color-mix(in srgb, var(--panel), transparent 8%);
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 75%);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stage {
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 70%);
+  background: var(--card);
+  padding: 0.75rem;
+  cursor: pointer;
+  min-height: 130px;
+}
+
+.stage:hover {
+  transform: translateY(-2px);
+}
+
+.stage .value {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: #001525;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #385181;
+  color: white;
+}
+
+.badge {
+  margin-left: auto;
+  background: #102f2d;
+  border: 1px solid color-mix(in srgb, var(--good), transparent 65%);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+}
+
+.event-log,
+.telemetry,
+.notes {
+  margin: 0.75rem 0 0;
+  padding-left: 1rem;
+}
+
+.event-log {
+  min-height: 90px;
+}
+
+.ok {
+  color: var(--good);
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.bad {
+  color: var(--bad);
+}
+
+.hint {
+  color: #c7d6ff;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

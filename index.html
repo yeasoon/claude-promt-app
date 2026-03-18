@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CUDA Pipeline Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CUDA Pipeline Game Demo</h1>
+      <p>
+        Route kernels through GPU hardware stages, avoid bottlenecks, and learn how
+        SMs, warps, memory bandwidth, and occupancy interact.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="panel game-panel">
+        <h2>Pipeline Board</h2>
+        <p class="hint">
+          Click each stage to choose a hardware profile. Build a balanced pipeline
+          before dispatching the kernel.
+        </p>
+        <div id="pipeline" class="pipeline" aria-label="CUDA pipeline board"></div>
+
+        <div class="controls">
+          <button id="runBtn">Run Kernel</button>
+          <button id="resetBtn" class="secondary">Reset</button>
+          <span id="scoreBadge" class="badge">Score: 0</span>
+        </div>
+
+        <div id="eventLog" class="event-log" aria-live="polite"></div>
+      </section>
+
+      <aside class="panel info-panel">
+        <h2>GPU Telemetry</h2>
+        <ul id="telemetry" class="telemetry"></ul>
+
+        <h3>Learning Notes</h3>
+        <ul id="notes" class="notes"></ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>
+        Demo is pure HTML/CSS/JS so it runs locally on macOS, Windows, Linux, iOS,
+        and Android browsers.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
